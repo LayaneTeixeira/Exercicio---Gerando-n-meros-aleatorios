@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) {
+  int i, j, aux, vetor[6];
+
+  printf("Vetor sem ordenação: \n");
+  printf("\n");
+  /*Gerando números aleátorios não repetitivos, usando a hora do computador como
+   * semente*/
+  srand(time(NULL));
+  for (i = 0; i < 6; i++) {
+    vetor[i] = rand();
+    printf("%d\n", vetor[i]);
+  }
+  /*Ordenando o vetor em ordem crescente*/
+  printf("\n");
+  for (i = 0; i < 6; i++) {
+    for (j = 0; j < 6; j++) {
+      if (vetor[i] < vetor[j]) {
+        aux = vetor[i];
+        vetor[i] = vetor[j];
+        vetor[j] = aux;
+      }
+    }
+  }
+  printf("Vetor ordenado em ordem crescente: \n");
+  printf("\n");
+  /*Exibindo o vetor ordenado*/
+  for (i = 0; i < 6; i++) {
+    printf("%d \n", vetor[i]);
+  }
+
+  return 0;
+}
